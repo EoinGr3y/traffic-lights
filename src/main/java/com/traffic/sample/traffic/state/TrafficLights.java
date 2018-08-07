@@ -1,4 +1,4 @@
-package com.traffic.sample.traffic.states;
+package com.traffic.sample.traffic.state;
 
 public class TrafficLights {
 

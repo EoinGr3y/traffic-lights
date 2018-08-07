@@ -1,4 +1,4 @@
-package com.traffic.sample.traffic.states;
+package com.traffic.sample.traffic.state;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

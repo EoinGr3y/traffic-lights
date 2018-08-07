@@ -1,6 +1,6 @@
 package com.traffic.sample.traffic;
 
-import com.traffic.sample.traffic.states.*;
+import com.traffic.sample.traffic.state.*;
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
 import org.junit.Test;
