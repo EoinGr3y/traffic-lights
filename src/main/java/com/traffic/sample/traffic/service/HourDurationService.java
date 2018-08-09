@@ -10,7 +10,7 @@ public class HourDurationService {
     @Autowired
     HourOfDayRepository hourOfDayRepository;
 
-    public Integer findDayDurationMultiplier(final Integer hourOfDay) {
+    public Integer findHourDurationMultiplier(final Integer hourOfDay) {
         return hourOfDayRepository.findByHour(hourOfDay).getDuration();
     }
 }

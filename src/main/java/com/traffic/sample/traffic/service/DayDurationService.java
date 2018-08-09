@@ -4,8 +4,6 @@ import com.traffic.sample.traffic.repository.DayOfWeekRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class DayDurationService {
 
@@ -16,7 +14,4 @@ public class DayDurationService {
         return dayOfWeekRepository.findByName(dayOfWeek).getDuration();
     }
 
-    public List<String> findAllPossibleDays() {
-        return dayOfWeekRepository.findAllNames();
-    }
 }

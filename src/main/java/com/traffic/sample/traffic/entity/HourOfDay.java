@@ -3,8 +3,6 @@ package com.traffic.sample.traffic.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 
 @Entity
 public class HourOfDay {
@@ -13,9 +11,15 @@ public class HourOfDay {
     @GeneratedValue
     private Long id;
     private Integer duration;
-    @Min(0)
-    @Max(23)
     private Integer hourOfDay;
+
+    public HourOfDay() {
+    }
+
+    public HourOfDay(final Integer duration, final Integer hourOfDay) {
+        this.duration = duration;
+        this.hourOfDay = hourOfDay;
+    }
 
     public Long getId() {
         return id;

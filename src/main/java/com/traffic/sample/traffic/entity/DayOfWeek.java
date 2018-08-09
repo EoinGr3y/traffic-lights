@@ -13,6 +13,14 @@ public class DayOfWeek {
     private Integer duration;
     private String name;
 
+    public DayOfWeek() {
+    }
+
+    public DayOfWeek(final Integer duration, final String name) {
+        this.duration = duration;
+        this.name = name;
+    }
+
     public Long getId() {
         return id;
     }
