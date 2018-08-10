@@ -3,6 +3,7 @@ package com.traffic.sample.traffic.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.Objects;
 
 @Entity
 public class HourOfDay {
@@ -52,5 +53,20 @@ public class HourOfDay {
                 ", duration=" + duration +
                 ", hourOfDay=" + hourOfDay +
                 '}';
+    }
+
+    @Override
+    public boolean equals(final Object o) {
+        if (this == o) return true;
+        if (!(o instanceof HourOfDay)) return false;
+        final HourOfDay hourOfDay1 = (HourOfDay) o;
+        return Objects.equals(id, hourOfDay1.id) &&
+                Objects.equals(duration, hourOfDay1.duration) &&
+                Objects.equals(hourOfDay, hourOfDay1.hourOfDay);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, duration, hourOfDay);
     }
 }

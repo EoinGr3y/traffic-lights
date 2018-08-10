@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class DayOfWeekRepository {
     @Autowired
-    JdbcTemplate jdbcTemplate;
+    private JdbcTemplate jdbcTemplate;
 
     public DayOfWeek findByName(String name) {
         return jdbcTemplate.queryForObject(

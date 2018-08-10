@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 public class DayDurationService {
 
     @Autowired
-    DayOfWeekRepository dayOfWeekRepository;
+    private DayOfWeekRepository dayOfWeekRepository;
 
     public Integer findDayDurationMultiplier(final String dayOfWeek) {
         return dayOfWeekRepository.findByName(dayOfWeek).getDuration();

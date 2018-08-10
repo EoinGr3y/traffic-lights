@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 public class HourDurationService {
 
     @Autowired
-    HourOfDayRepository hourOfDayRepository;
+    private HourOfDayRepository hourOfDayRepository;
 
     public Integer findHourDurationMultiplier(final Integer hourOfDay) {
         return hourOfDayRepository.findByHour(hourOfDay).getDuration();

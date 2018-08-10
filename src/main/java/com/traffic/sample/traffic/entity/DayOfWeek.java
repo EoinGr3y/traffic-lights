@@ -3,6 +3,7 @@ package com.traffic.sample.traffic.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.Objects;
 
 @Entity
 public class DayOfWeek {
@@ -52,5 +53,20 @@ public class DayOfWeek {
                 ", duration=" + duration +
                 ", name='" + name + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(final Object o) {
+        if (this == o) return true;
+        if (!(o instanceof DayOfWeek)) return false;
+        final DayOfWeek dayOfWeek = (DayOfWeek) o;
+        return Objects.equals(id, dayOfWeek.id) &&
+                Objects.equals(duration, dayOfWeek.duration) &&
+                Objects.equals(name, dayOfWeek.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, duration, name);
     }
 }

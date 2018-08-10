@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class HourOfDayRepository {
     @Autowired
-    JdbcTemplate jdbcTemplate;
+    private JdbcTemplate jdbcTemplate;
 
     public HourOfDay findByHour(Integer hour) {
         return jdbcTemplate.queryForObject(

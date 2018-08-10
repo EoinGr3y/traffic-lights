@@ -6,6 +6,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -30,6 +31,11 @@ public class DayOfWeekRepositoryTest {
         DayOfWeek actualDayOfWeek = dayOfWeekRepository.findByName(newDay.getName());
 
         assertEquals(newDay.getName(), actualDayOfWeek.getName());
+    }
+
+    @Test(expected = EmptyResultDataAccessException.class)
+    public void whenFindNonExistingName_thenExpectEmptyResultException() {
+        dayOfWeekRepository.findByName("Not Found");
     }
 
 }

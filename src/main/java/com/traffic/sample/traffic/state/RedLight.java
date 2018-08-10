@@ -1,11 +1,6 @@
 package com.traffic.sample.traffic.state;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class RedLight implements LightState {
-
-    private static Logger logger = LoggerFactory.getLogger(RedLight.class);
 
     @Override
     public String getLightState() {
